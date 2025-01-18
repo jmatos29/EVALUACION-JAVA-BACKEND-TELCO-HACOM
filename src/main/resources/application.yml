@@ -1,0 +1,22 @@
+mongodbDatabase: exampleDb
+mongodbUri: mongodb://127.0.0.1:27017
+apiPort: 9898
+
+spring:
+  application:
+    name: demo
+  data:
+    mongodb:
+      uri: '${mongodbUri}/${mongodbDatabase}'
+
+server:
+    port: ${apiPort}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
